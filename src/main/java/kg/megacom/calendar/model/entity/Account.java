@@ -7,17 +7,18 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
 import javax.persistence.Entity;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tb_accounts")
+@Table(name = "tb_account")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class Accounts extends AbstractPersistable{
+public class Account extends AbstractPersistable<Long>{
 
-    @Column(name = "login", nullable = false)
+    @Column(name = "login", nullable = false, unique = true)
     String login;
 
     @Column(name = "password", nullable = false)

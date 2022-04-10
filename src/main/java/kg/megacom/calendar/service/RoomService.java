@@ -11,5 +11,5 @@ public interface RoomService {
     RoomDto create(CreateRoomRequest request);
     RoomDto update(RoomDto roomDto);
     RoomDto findById(Long id);
-    void save(Room room);
+    RoomDto save(RoomDto roomDto);
 }

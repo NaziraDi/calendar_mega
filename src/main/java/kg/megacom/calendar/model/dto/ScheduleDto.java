@@ -12,6 +12,7 @@ import java.time.LocalTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ScheduleDto {
 
+    Long id;
     OrganizationEmployeeDto organizationEmployee;
     WeekdayDto weekday;
     LocalTime startTime;

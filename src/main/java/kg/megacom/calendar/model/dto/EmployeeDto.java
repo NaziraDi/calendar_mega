@@ -1,6 +1,5 @@
 package kg.megacom.calendar.model.dto;
 
-import kg.megacom.calendar.model.entity.Accounts;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -9,12 +8,15 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class EmployeeDto {
+public class    EmployeeDto {
+
+    Long id;
     String lastName;
     String firstName;
     String email;
     String msisdn;
     String status;
-    AccountsDto accounts;
+    String employeeStatus;
+    AccountDto account;
     Boolean isActive;
 }

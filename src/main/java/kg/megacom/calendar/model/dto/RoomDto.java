@@ -11,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RoomDto {
 
+    Long id;
     String roomNumber;
     Integer roomCapacity;
     RoomDto room;

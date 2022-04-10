@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 public interface WeekdayService {
 
     WeekdayDto create(CreateWeekdayRequest request);
-    WeekdayDto update(WeekdayDto weekdayDto);
     WeekdayDto findById(Long id);
-    void save(Weekday weekday);
+    WeekdayDto save(WeekdayDto weekdayDto);
 }

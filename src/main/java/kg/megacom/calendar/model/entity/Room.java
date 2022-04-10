@@ -7,15 +7,16 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
 import javax.persistence.Entity;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "room")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class Room extends AbstractPersistable {
+public class Room extends AbstractPersistable<Long> {
 
     @Column(name = "room_number", nullable = false)
     String roomNumber;

@@ -10,5 +10,5 @@ public interface RoomAvailabilityService {
     RoomAvailabilityDto create(CreateRoomAvailabilityRequest request);
     RoomAvailabilityDto update(RoomAvailabilityDto roomAvailabilityDto);
     RoomAvailabilityDto findById(Long id);
-    void save(RoomAvailability roomAvailability);
+    RoomAvailabilityDto save(RoomAvailabilityDto roomAvailabilityDto);
 }

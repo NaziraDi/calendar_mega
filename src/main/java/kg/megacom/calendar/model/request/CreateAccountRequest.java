@@ -1,4 +1,5 @@
-package kg.megacom.calendar.model.dto;
+package kg.megacom.calendar.model.request;
+
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -8,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AccountsDto {
+public class CreateAccountRequest {
 
     String login;
     String password;

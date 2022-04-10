@@ -7,15 +7,16 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
 import javax.persistence.Entity;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "week_days")
+@Table(name = "tb_weekday")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class Weekday extends AbstractPersistable{
+public class Weekday extends AbstractPersistable<Long>{
 
     @Column(name = "weekday", nullable = false)
     String weekday;

@@ -9,15 +9,17 @@ import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Data
+
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tb_meeting")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class Meeting extends AbstractPersistable {
+public class Meeting extends AbstractPersistable<Long> {
 
     @Column(name = "meeting_topic", nullable = false)
     String meetingTopic;
@@ -35,6 +37,6 @@ public class Meeting extends AbstractPersistable {
     LocalTime meetingEndTime;
 
     @Column(name = "add_date", nullable = false)
-    LocalTime addDate;
+    LocalDate addDate;
 
 }

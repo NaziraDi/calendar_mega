@@ -14,7 +14,7 @@ public class CreateEmployeeRequest {
     String firstName;
     String email;
     String msisdn;
-    String status;
-    Long accountsId;
+    String employeeStatus;
+    Long accountId;
     Boolean isActive;
 }

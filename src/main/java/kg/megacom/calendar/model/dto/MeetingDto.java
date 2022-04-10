@@ -13,10 +13,12 @@ import java.time.LocalTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class MeetingDto {
 
+    Long id;
     String meetingTopic;
     String description;
     LocalDate meetingDate;
     LocalTime meetingStartTime;
     LocalTime meetingEndTime;
-    LocalTime addDate;
+    LocalDate addDate;
+
 }

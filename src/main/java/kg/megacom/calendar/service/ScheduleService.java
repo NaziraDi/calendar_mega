@@ -11,5 +11,5 @@ public interface ScheduleService {
     ScheduleDto create(CreateScheduleRequest request);
     ScheduleDto update(ScheduleDto scheduleDto);
     ScheduleDto findById(Long id);
-    void save(Schedule schedule);
+    ScheduleDto save(ScheduleDto scheduleDto);
 }

@@ -12,6 +12,5 @@ public interface MeetingEmployeeService {
     MeetingEmployeeDto create(CreateMeetingEmployeeRequest request);
     MeetingEmployeeDto update(MeetingEmployeeDto meetingDto);
     MeetingEmployeeDto findById(Long id);
-    MeetingEmployeeDto delete(Long id);
-    void save(MeetingEmployee meetingEmployee);
+    MeetingEmployeeDto save(MeetingEmployeeDto meetingEmployeeDto);
 }

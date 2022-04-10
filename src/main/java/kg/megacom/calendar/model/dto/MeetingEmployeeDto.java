@@ -1,6 +1,6 @@
 package kg.megacom.calendar.model.dto;
 
-import kg.megacom.calendar.model.entity.MemberType;
+import kg.megacom.calendar.model.enums.MemberType;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -11,8 +11,9 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class MeetingEmployeeDto {
 
+    Long id;
     MeetingDto meeting;
     EmployeeDto employee;
-    String status;
-    MemberType memberType;
+    String meetingStatus;
+    String memberType;
 }

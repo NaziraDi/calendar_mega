@@ -9,15 +9,16 @@ import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "room")
+@Table(name = "tb_room_availability")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class RoomAvailability extends AbstractPersistable{
+public class RoomAvailability extends AbstractPersistable<Long>{
 
     @Column(name = "room_date", nullable = false)
     LocalDate roomDate;

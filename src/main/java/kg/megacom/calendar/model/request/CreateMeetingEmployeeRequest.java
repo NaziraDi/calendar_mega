@@ -1,7 +1,7 @@
 package kg.megacom.calendar.model.request;
 
 
-import kg.megacom.calendar.model.entity.MemberType;
+import kg.megacom.calendar.model.enums.MemberType;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -14,6 +14,6 @@ public class CreateMeetingEmployeeRequest {
 
     Long meetingId;
     Long employeeId;
-    String status;
-    MemberType memberType;
+    String meetingStatus;
+    String memberType;
 }

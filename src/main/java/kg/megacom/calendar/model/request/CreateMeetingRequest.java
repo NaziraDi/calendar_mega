@@ -16,5 +16,5 @@ public class CreateMeetingRequest {
     LocalDate meetingDate;
     LocalTime meetingStartTime;
     LocalTime meetingEndTime;
-    LocalTime addDate;
+    LocalDate addDate;
 }

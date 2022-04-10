@@ -14,6 +14,7 @@ import java.time.LocalTime;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RoomAvailabilityDto {
 
+    Long id;
     LocalDate roomDate;
     LocalTime availableFrom;
     LocalTime availableTo;

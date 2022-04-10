@@ -8,15 +8,16 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import java.time.LocalTime;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "schedule")
+@Table(name = "tb_schedule")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class Schedule extends AbstractPersistable {
+public class Schedule extends AbstractPersistable<Long> {
 
     @OneToOne
     @JoinColumn(name = "organization_employee_id", nullable = false)

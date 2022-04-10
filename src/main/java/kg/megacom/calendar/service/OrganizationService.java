@@ -10,6 +10,5 @@ public interface OrganizationService {
     OrganizationDto create(CreateOrganizationRequest request);
     OrganizationDto update(OrganizationDto organizationDto);
     OrganizationDto findById(Long id);
-    OrganizationDto delete(Long id);
-    void save(Organization organization);
+    OrganizationDto save(OrganizationDto organizationDto);
 }

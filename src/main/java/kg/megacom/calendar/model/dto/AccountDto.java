@@ -8,8 +8,10 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AdminsDto {
+public class AccountDto {
 
-    OrganizationDto organization;
-    EmployeeDto employee;
+    Long id;
+    String login;
+    String password;
+    Integer loginCount;
 }

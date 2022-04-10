@@ -11,6 +11,5 @@ public interface MeetingService {
     MeetingDto create(CreateMeetingRequest request);
     MeetingDto update(MeetingDto meetingDto);
     MeetingDto findById(Long id);
-    MeetingDto delete(Long id);
-    void save(Meeting meeting);
+    MeetingDto save(MeetingDto meetingDto);
 }

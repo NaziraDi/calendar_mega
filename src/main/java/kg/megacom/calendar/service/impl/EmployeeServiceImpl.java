@@ -1,11 +1,12 @@
 package kg.megacom.calendar.service.impl;
 
+import kg.megacom.calendar.mapper.EmployeeMapper;
 import kg.megacom.calendar.model.dto.EmployeeDto;
-import kg.megacom.calendar.model.entity.Accounts;
+import kg.megacom.calendar.model.entity.Account;
 import kg.megacom.calendar.model.entity.Employee;
 import kg.megacom.calendar.model.request.CreateEmployeeRequest;
 import kg.megacom.calendar.repository.EmployeeRepository;
-import kg.megacom.calendar.service.AccountsService;
+import kg.megacom.calendar.service.AccountService;
 import kg.megacom.calendar.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
-    private final AccountsService accountsService;
+    private final AccountService accountsService;
 
     @Override
     public EmployeeDto create(CreateEmployeeRequest request) {
@@ -26,10 +27,9 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .firstName(request.getFirstName())
                 .email(request.getEmail())
                 .msisdn(request.getMsisdn())
-                .status(request.getStatus())
                 .isActive(true)
                 .build();
-        Accounts accounts = Accounts
+        Account accounts = Account
                 .builder()
                 
                 .build();
@@ -43,16 +43,29 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDto findById(Long id) {
-        return null;
+
+        Employee employee = employeeRepository
+                .findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee with id" + id + "is not found"));
+        return EmployeeMapper.INSTANCE.toDto(employee);
     }
 
     @Override
     public EmployeeDto delete(Long id) {
-        return null;
+
+        return EmployeeMapper.INSTANCE.toDto(employeeRepository.findById(id).map(employee -> {
+            employee.setIsActive(false);
+            return employeeRepository.save(employee);
+        }).orElseThrow(() -> new RuntimeException("Employee is not found or already deleted")));
     }
 
     @Override
-    public void save(Employee employee) {
+    public EmployeeDto save(EmployeeDto employeeDto) {
 
+        EmployeeDto employeeDto1 = EmployeeMapper.INSTANCE.toDto(employeeRepository.save(
+                EmployeeMapper.INSTANCE.toEntity(employeeDto)
+        ));
+
+        return employeeDto1;
     }
 }

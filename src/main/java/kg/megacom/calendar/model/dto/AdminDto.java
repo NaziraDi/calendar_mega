@@ -1,4 +1,4 @@
-package kg.megacom.calendar.model.request;
+package kg.megacom.calendar.model.dto;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -8,7 +8,9 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CreateAdminsRequest {
-    Long organizationId;
-    Long employeeId;
+public class AdminDto {
+
+    Long id;
+    OrganizationDto organization;
+    EmployeeDto employee;
 }

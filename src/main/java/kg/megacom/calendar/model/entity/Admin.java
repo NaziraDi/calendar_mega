@@ -7,15 +7,17 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.*;
 import javax.persistence.Entity;
 
-@Data
+
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "organization_employee")
+@Table(name = "tb_admin")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class Admins extends AbstractPersistable {
+public class Admin extends AbstractPersistable<Long> {
     @ManyToOne
     @JoinColumn(name = "organization_id", referencedColumnName = "id")
     Organization organization;

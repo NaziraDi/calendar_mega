@@ -11,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class OrganizationDto {
 
+    Long id;
     String title;
     OrganizationDto organization;
 }

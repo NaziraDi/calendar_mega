@@ -1,23 +1,24 @@
 package kg.megacom.calendar.model.entity;
 
+import kg.megacom.calendar.model.enums.MeetingStatus;
+import kg.megacom.calendar.model.enums.MemberType;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
-import java.time.LocalDate;
-import java.time.LocalTime;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "room")
+@Table(name = "tb_meeting_employee")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@EqualsAndHashCode(callSuper = true)
-public class MeetingEmployee extends AbstractPersistable {
+public class MeetingEmployee extends AbstractPersistable<Long> {
 
     @ManyToOne
     @JoinColumn(name = "meeting_id", referencedColumnName = "id")
@@ -27,8 +28,8 @@ public class MeetingEmployee extends AbstractPersistable {
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     Employee employee;
 
-    @Column(name = "status", nullable = false)
-    String status;
+    @Column(name = "meeting_status", nullable = false)
+    MeetingStatus meetingStatus;
 
     @Transient
     MemberType memberType;
