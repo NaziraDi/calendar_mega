@@ -24,7 +24,7 @@ public class AccountController {
         }
     }
 
-    @PutMapping("/save")
+    @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody AccountDto accountDto) {
         try {
             return ResponseEntity.ok().body(accountService.save(accountDto));
@@ -33,6 +33,4 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
         }
     }
-
-
 }

@@ -29,7 +29,7 @@ public class RoomAvailability extends AbstractPersistable<Long>{
     @Column(name = "available_to", nullable = false)
     LocalTime availableTo;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "room_id", referencedColumnName = "id")
     Room room;
 }
